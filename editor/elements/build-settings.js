@@ -32,7 +32,7 @@ Polymer({
         this.isInvalidName = false;
         this.isInvalidPath = false;
         var loadFile = false;
-        
+
         this.loadConfig(function (data,err,errMsg) {
             if (!err) {
                 this.isDebug = data.isDebug;
@@ -136,7 +136,7 @@ Polymer({
 
     pathInputBlurAction: function () {
         if ( !Fs.existsSync(this.defaultBuildPath) || !Fs.statSync(this.defaultBuildPath).isDirectory() ) {
-            Fire.warn('build dir not eixsts');
+            Fire.warn('Build Dir Not Eixsts');
             this.$.path.setAttribute("invalid","");
             this.isInvalidPath = true;
             return;
@@ -150,7 +150,7 @@ Polymer({
 
     projectNameBlurAction: function () {
         if ( this.$.projName.value === "" ) {
-            Fire.warn('build dir not eixsts');
+            Fire.warn('Invalid Project Name');
             this.$.projName.setAttribute("invalid","");
             this.isInvalidName = true;
             return;
@@ -167,7 +167,9 @@ Polymer({
             this.$.tip.style.display = "none";
             this.getBuildList();
             this.saveConfig();
-            // TODO:
+
+            // TODO build Action
+
         }else {
             this.$.tip.style.display = "block";
             this.$.tip.animate([
@@ -179,5 +181,9 @@ Polymer({
                 duration: 300
             });
         }
+    },
+
+    CancelAction: function () {
+        window.close();
     },
 });
