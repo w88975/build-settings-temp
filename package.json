@@ -17,10 +17,10 @@
                 "options": {
                     "title": "Build Page",
                     "width": 500,
-                    "height": 500,
+                    "height": 520,
                     "min-width": 500,
                     "min-height": 500,
-                    "resizable": true
+                    "resizable": false
                 }
             }
         }
