@@ -162,7 +162,7 @@ Polymer({
         }
     },
 
-    BuildAction: function () {
+    buildAction: function () {
         if (!this.isInvalidName && !this.isInvalidPath) {
             this.$.tip.style.display = "none";
             this.getBuildList();
@@ -183,7 +183,7 @@ Polymer({
         }
     },
 
-    CancelAction: function () {
+    cancelAction: function () {
         window.close();
     },
 });
